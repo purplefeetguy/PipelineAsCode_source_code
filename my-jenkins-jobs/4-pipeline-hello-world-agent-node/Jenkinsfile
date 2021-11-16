@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        node {
+            label "smith"
+            customWorkspace "/home/jenkins/customWorkspace"
+        }
+    }
+
+    stages {
+        stage("Build"){
+            steps{
+                echo "Hello World"
+            }
+        }
+    }
+}
