@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage("Build") {
+            steps {
+                retry(3) {
+                    echo "Before throwing error"
+                    error "Error in retry"
+                }
+
+                echo "After retry(3)"
+            }
+        }
+    }
+}
